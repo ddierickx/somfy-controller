@@ -1,0 +1,15 @@
+# systemd service file
+# goes in /etc/systemd/system/somfy.service
+
+[Unit]
+Description=Somfy controller UI and webservice
+After=network.target
+
+[Service]
+Type=simple
+PIDFile=/var/run/somfy.pid
+WorkingDirectory=/home/pi/somfy-controller
+ExecStart=/home/pi/somfy-controller/somfy-controller 
+
+[Install]
+WantedBy=multi-user.target
