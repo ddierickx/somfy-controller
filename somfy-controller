@@ -16,7 +16,7 @@ GPIO.setup(pin_stop, GPIO.OUT)
 app = Flask(__name__)
 
 @app.route("/")
-def default():
+def index():
     redirect(url_for("static", file="remote.html"))
 
 @app.route("/somfy/<state>")
