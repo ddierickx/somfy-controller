@@ -4,23 +4,23 @@ import RPi.GPIO as GPIO
 import time
 from flask import Flask
 
-pin_open = 17
-pin_close = 18
+pin_up = 17
+pin_down = 18
 pin_stop = 19
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin_open, GPIO.OUT)
-GPIO.setup(pin_close, GPIO.OUT)
+GPIO.setup(pin_up, GPIO.OUT)
+GPIO.setup(pin_down, GPIO.OUT)
 GPIO.setup(pin_stop, GPIO.OUT)
 
 app = Flask(__name__)
 
 @app.route("/somfy/<state>")
 def somfy(state):
-    if state == "open":
-	return set(pin_open)
-    elif state == "close":
-	return set(pin_close)
+    if state == "up":
+	return set(pin_up)
+    elif state == "down":
+	return set(pin_down)
     elif state == "stop":
 	return set(pin_stop)
 
