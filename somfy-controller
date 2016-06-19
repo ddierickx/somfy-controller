@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def default():
-    redirect(url_for("remote.html"))
+    redirect(url_for("static", file="remote.html"))
 
 @app.route("/somfy/<state>")
 def somfy(state):
