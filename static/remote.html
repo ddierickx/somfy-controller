@@ -34,6 +34,7 @@
             document.getElementById("remote").src="remote.jpg";
         }, 1*1000);
         document.getElementById("remote").src="remote_active.jpg";
+        var xhttp = new XMLHttpRequest();
         xhttp.open("GET", "/somfy/" + state, true);
         xhttp.send();
     }
