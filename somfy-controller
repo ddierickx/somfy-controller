@@ -5,8 +5,8 @@ import time
 from flask import Flask, redirect, url_for
 
 pin_up = 17
-pin_down = 18
-pin_stop = 19
+pin_down = 27
+pin_stop = 22
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pin_up, GPIO.OUT)
@@ -22,11 +22,11 @@ def index():
 @app.route("/somfy/<state>")
 def somfy(state):
     if state == "up":
-	return set(pin_up)
+	   return set(pin_up)
     elif state == "down":
-	return set(pin_down)
+	   return set(pin_down)
     elif state == "stop":
-	return set(pin_stop)
+	   return set(pin_stop)
 
 def set(pin):
 	GPIO.output(pin, True)
