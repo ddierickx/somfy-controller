@@ -5,8 +5,8 @@ import time
 from flask import Flask, redirect, url_for
 
 pin_up = 17
-pin_down = 27
-pin_stop = 22
+pin_down = 22
+pin_stop = 27
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pin_up, GPIO.OUT)
